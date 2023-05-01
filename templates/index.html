@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Credit Card Fraud Detection</title>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: #f2f2f2;
+            }
+            h1 {
+                text-align: center;
+                font-size: 36px;
+                color: #333333;
+                margin-top: 50px;
+            }
+            h2 {
+                text-align: center;
+                font-size: 24px;
+                color: #666666;
+                margin-top: 30px;
+            }
+            form {
+                margin: 0 auto;
+                width: 50%;
+                background-color: #ffffff;
+                padding: 20px;
+                border-radius: 5px;
+            }
+            label {
+                font-size: 20px;
+                color: #333333;
+                display: block;
+                margin-top: 15px;
+            }
+            input[type='number'] {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                box-sizing: border-box;
+                border: 2px solid #ccc;
+                border-radius: 4px;
+            }
+            input[type='submit'] {
+                background-color: #4CAF50;
+                color: white;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                margin-top: 20px;
+                width: 100%;
+                font-size: 20px;
+            }
+            input[type='submit']:hover {
+                background-color: #45a049;
+            }
+            h2.result {
+                font-size: 28px;
+                color: #333333;
+                margin-top: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Credit Card Fraud Detection</h1>
+        <h2>Please enter the following values:</h2>
+        <form action="{{ url_for('predict') }}" method="post">
+            <label for="day">Transaction Day:</label>
+            <input type="number" id="day" name="day" step="1">
+
+            <label for="month">Transaction Month:</label>
+            <input type="number" id="month" name="month" step="1">
+    
+            <label for="customer-id">Customer ID:</label>
+            <input type="number" id="customer-id" name="customer-id" step="1">
+    
+            <label for="terminal-id">Terminal ID:</label>
+            <input type="number" id="terminal-id" name="terminal-id" step="1">
+    
+            <label for="amount">Transaction Amount:</label>
+            <input type="number" id="amount" name="amount" step="0.01">
+    
+            <label for="seconds">Transaction Time in Seconds:</label>
+            <input type="number" id="seconds" name="seconds" step="1">
+    
+            <label for="days">Transaction Time in Days:</label>
+            <input type="number" id="days" name="days" step="1">
+    
+            <input type="submit" value="Submit">
+        </form>
+    
+        {% if result %}
+            <h2 class="result">The prediction is {{result}}</h2>
+        {% endif %}
+    </body>
+</html>    

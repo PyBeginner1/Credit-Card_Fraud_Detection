@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Credit Card Fraud Detection</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f2f2f2;
+            }
+            h1 {
+                font-size: 36px;
+                text-align: center;
+                margin-top: 50px;
+            }
+            form {
+                text-align: center;
+                margin-top: 50px;
+            }
+            input[type=submit] {
+                background-color: #4CAF50;
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin-top: 20px;
+                cursor: pointer;
+            }
+            input[type=submit]:hover {
+                background-color: #3e8e41;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Welcome to Credit Card Fraud Detection</h1>
+        <form action="/predict" method="get">
+            <input type="submit" value="Start Prediction">
+        </form>
+    </body>
+</html>
