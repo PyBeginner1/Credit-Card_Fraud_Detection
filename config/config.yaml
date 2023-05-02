@@ -1,0 +1,9 @@
+training_pipeline_config:
+  pipeline_name: src
+  artifact_dir: artifact
+
+
+data_ingestion_config:
+  ingested_dir: ingested_data
+  ingested_train_dir: train
+  ingested_test_dir: test 
