@@ -1,1 +1,10 @@
 Flask
+ipykernel
+numpy
+pandas
+matplotlib
+seaborn
+PyYAML
+scikit-learn
+
+-e .
