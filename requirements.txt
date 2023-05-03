@@ -6,5 +6,6 @@ matplotlib
 seaborn
 PyYAML
 scikit-learn
+dill
 
 -e .
