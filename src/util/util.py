@@ -28,5 +28,17 @@ def save_object(file_path:str,obj):
     except Exception as e:
         logging.info(e)
         raise FraudException(e,sys) from e 
+    
+
+
+def load_object(file_path:str):
+    """
+    file_path: str
+    """
+    try:
+        with open(file_path, "rb") as file_obj:
+            return dill.load(file_obj)
+    except Exception as e:
+        raise FraudException(e,sys) from e
 
 
