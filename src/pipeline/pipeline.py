@@ -6,11 +6,13 @@ from src.logger import logging
 from src.exception import FraudException
 from src.config.configuration import ConfigurationManager
 from src.entity.config_entity import DataTransformationConfig
-from src.entity.artifact_entity import DataIngestionArtifact, DataTransformationArtifact, ModelTrainerArtifact, ModelEvaluationArtifact
+from src.entity.artifact_entity import DataIngestionArtifact, DataTransformationArtifact, ModelTrainerArtifact, \
+                                        ModelEvaluationArtifact, ModelPusherArtifact
 from src.components.data_ingestion import DataIngestion
 from src.components.data_transformation import DataTransformation
 from src.components.model_trainer import ModelTrainer
 from src.components.model_evaluation import ModelEvaluation
+from src.components.model_pusher import ModelPusher
 
 class Pipeline:
     def __init__(self, config : ConfigurationManager):
@@ -58,6 +60,15 @@ class Pipeline:
             return model_evaluation.initiate_model_evaluation()
         except Exception as e:
             raise FraudException(e,sys) from e
+        
+
+    def start_model_pusher(self, model_evaluation_artifact: ModelEvaluationArtifact) -> ModelPusherArtifact:
+        try:
+            model_pusher = ModelPusher(model_pusher_config=self.config.get_model_pusher_config(),
+                        model_evaluation_artifact=model_evaluation_artifact)
+            return model_pusher.initiate_model_pusher()
+        except Exception as e:
+            raise FraudException(e,sys) from e
 
 
     def run_pipeline(self):
@@ -67,6 +78,7 @@ class Pipeline:
             model_trainer_artifact = self.start_model_trainer(data_transformation_artifact=data_transformation_artifact)
             model_evaluation_artifact = self.start_model_evaluation(data_ingestion_artifact=data_ingestion_artifact,
                                                                     model_trainer_artifact=model_trainer_artifact)
-            print(model_evaluation_artifact)
+            model_pusher_artifact = self.start_model_pusher(model_evaluation_artifact=model_evaluation_artifact)
+            print(model_pusher_artifact)
         except Exception as e:
             raise FraudException(e,sys) from e

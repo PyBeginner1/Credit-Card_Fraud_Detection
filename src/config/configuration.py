@@ -3,7 +3,8 @@ import os,sys
 from src.logger import logging
 from src.exception import FraudException
 from src.constant import *
-from src.entity.config_entity import DataIngestionConfig, TrainingPipelineConfig, DataTransformationConfig, ModelTrainerConfig, ModelEvaluationConfig
+from src.entity.config_entity import DataIngestionConfig, TrainingPipelineConfig, DataTransformationConfig, ModelTrainerConfig, \
+                                        ModelEvaluationConfig, ModelPusherConfig
 from src.util.util import read_yaml_file
 
 class ConfigurationManager:
@@ -112,6 +113,22 @@ class ConfigurationManager:
             
             logging.info(f"Model Evaluation Config: [{model_evaluation_config}]")
             return model_evaluation_config
+        except Exception as e:
+            raise FraudException(e, sys) from e
+        
+
+    def get_model_pusher_config(self) -> ModelPusherConfig:
+        try:
+            artifact_dir = self.training_pipeline_config.artifact_dir
+            model_pusher_config_info = self.config[MODEL_PUSHER_CONFIG_KEY]
+
+            export_dir_path = os.path.join(ROOT_DIR, model_pusher_config_info[MODEL_PUSHER_MODEL_EXPORT_DIR_KEY],
+                                           self.time_stamp)
+
+            model_pusher_config = ModelPusherConfig(export_dir_path=export_dir_path)
+
+            logging.info(f"Model Pusher Config: [{model_pusher_config}]")
+            return model_pusher_config
         except Exception as e:
             raise FraudException(e, sys) from e
 
