@@ -3,7 +3,7 @@ import os,sys
 from src.logger import logging
 from src.exception import FraudException
 from src.constant import *
-from src.entity.config_entity import DataIngestionConfig, TrainingPipelineConfig, DataTransformationConfig, ModelTrainerConfig
+from src.entity.config_entity import DataIngestionConfig, TrainingPipelineConfig, DataTransformationConfig, ModelTrainerConfig, ModelEvaluationConfig
 from src.util.util import read_yaml_file
 
 class ConfigurationManager:
@@ -93,6 +93,25 @@ class ConfigurationManager:
             
             logging.info(f"Model Trainer Config: [{model_trainer_config}]")
             return model_trainer_config
+        except Exception as e:
+            raise FraudException(e, sys) from e
+        
+
+
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        try:
+            artifact_dir = self.training_pipeline_config.artifact_dir
+            model_evaluation_artifact_dir = os.path.join(artifact_dir, MODEL_EVALUATION_ARTIFACT_DIR, self.time_stamp)
+
+            model_evaluation_config_info = self.config[MODEL_EVALUATION_CONFIG_KEY]
+
+            model_evaluation_file_path = os.path.join(model_evaluation_artifact_dir, model_evaluation_config_info[MODEL_EVALUATION_FILE_NAME_KEY])
+
+            model_evaluation_config = ModelEvaluationConfig(model_evaluation_file_path=model_evaluation_file_path,
+                                                            time_stamp=self.time_stamp)
+            
+            logging.info(f"Model Evaluation Config: [{model_evaluation_config}]")
+            return model_evaluation_config
         except Exception as e:
             raise FraudException(e, sys) from e
 
