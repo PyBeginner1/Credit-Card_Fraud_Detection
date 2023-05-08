@@ -2,21 +2,23 @@ import os, sys
 import numpy as np
 import pandas as pd
 
+from sklearn.preprocessing import StandardScaler
+
 from src.logger import logging
 from src.exception import FraudException
 from src.entity.config_entity import ModelEvaluationConfig
-from src.entity.artifact_entity import DataIngestionArtifact, ModelTrainerArtifact, ModelEvaluationArtifact
+from src.entity.artifact_entity import DataIngestionArtifact, ModelTrainerArtifact, ModelEvaluationArtifact, DataTransformationArtifact
 from src.constant import *
 from src.util.util import load_object, write_yaml_file, read_yaml_file
 from src.entity.model_factory import evaluate_regression_model
 
 class ModelEvaluation:
     def __init__(self, model_evaluation_config: ModelEvaluationConfig,
-                 data_ingestion_artifact: DataIngestionArtifact,
+                 data_transformation_artifact: DataTransformationArtifact,
                  model_trainer_artifact: ModelTrainerArtifact):
         try:
             self.model_evaluation_config = model_evaluation_config
-            self.data_ingestion_artifact = data_ingestion_artifact
+            self.data_transformation_artifact = data_transformation_artifact
             self.model_trainer_artifact = model_trainer_artifact
         except Exception as e:
             raise FraudException(e, sys) from e
@@ -82,8 +84,8 @@ class ModelEvaluation:
             trained_model_file_path = self.model_trainer_artifact.trained_model_file_path
             trained_model_object = load_object(trained_model_file_path)
 
-            train_file_path = self.data_ingestion_artifact.train_file_path
-            test_file_path = self.data_ingestion_artifact.test_file_path
+            train_file_path = self.data_transformation_artifact.transformed_train_file_path
+            test_file_path = self.data_transformation_artifact.transformed_test_file_path
 
             train_df = pd.read_csv(train_file_path)
             test_df = pd.read_csv(test_file_path)
@@ -102,6 +104,11 @@ class ModelEvaluation:
             test_df.drop(target_column_name, axis=1, inplace=True)
             logging.info(f"Dropping target column from the dataframe completed.")
 
+            ###
+            scaler = StandardScaler()
+            scaled_train_df = pd.DataFrame(scaler.fit_transform(train_df), columns = train_df.columns)
+            scaled_test_df = pd.DataFrame(scaler.transform(test_df), columns = test_df.columns)
+
             model = self.get_best_model()
 
             if model is None:
@@ -115,9 +122,9 @@ class ModelEvaluation:
             model_list = [model, trained_model_object]
 
             metric_info_artifact = evaluate_regression_model(model_list=model_list,
-                                                               X_train=train_df,
+                                                               X_train=scaled_train_df,
                                                                y_train=train_target_arr,
-                                                               X_test=test_df,
+                                                               X_test=scaled_test_df,
                                                                y_test=test_target_arr,
                                                                base_accuracy=self.model_trainer_artifact.model_accuracy,
                                                                )
