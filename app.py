@@ -60,7 +60,7 @@ def predict():
             if result[0] == 0:
                 result = 'The provided information is not Fraudulent'
             else:
-                result = 'The provided information is  Fraudulent'
+                result = 'The provided information is Fraudulent'
             return render_template('predict.html', result = result)
     except Exception as e:
         raise e
