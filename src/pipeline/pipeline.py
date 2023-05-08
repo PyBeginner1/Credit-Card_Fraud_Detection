@@ -51,11 +51,11 @@ class Pipeline:
             raise FraudException(e,sys) from e
         
 
-    def start_model_evaluation(self, data_ingestion_artifact: DataIngestionArtifact,
+    def start_model_evaluation(self, data_transformation_artifact: DataTransformationArtifact,
                                model_trainer_artifact: ModelTrainerArtifact) -> ModelEvaluationArtifact:
         try:
             model_evaluation = ModelEvaluation(model_evaluation_config=self.config.get_model_evaluation_config(),
-                            data_ingestion_artifact=data_ingestion_artifact,
+                            data_transformation_artifact=data_transformation_artifact,
                             model_trainer_artifact=model_trainer_artifact)
             return model_evaluation.initiate_model_evaluation()
         except Exception as e:
@@ -76,7 +76,7 @@ class Pipeline:
             data_ingestion_artifact = self.start_data_ingestion()
             data_transformation_artifact = self.start_data_transformation(data_ingestion_artifact=data_ingestion_artifact)
             model_trainer_artifact = self.start_model_trainer(data_transformation_artifact=data_transformation_artifact)
-            model_evaluation_artifact = self.start_model_evaluation(data_ingestion_artifact=data_ingestion_artifact,
+            model_evaluation_artifact = self.start_model_evaluation(data_transformation_artifact=data_transformation_artifact,
                                                                     model_trainer_artifact=model_trainer_artifact)
             model_pusher_artifact = self.start_model_pusher(model_evaluation_artifact=model_evaluation_artifact)
             print(model_pusher_artifact)
