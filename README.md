@@ -1,6 +1,6 @@
 # Credit-Card_Fraud_Detection
 
-"(Transaction_data_Simulator)=\n",
+(Transaction_data_Simulator)=\n",
     "# Transaction data simulator\n",
     "\n",
     "\n",
