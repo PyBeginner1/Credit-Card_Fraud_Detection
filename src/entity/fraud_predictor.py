@@ -89,9 +89,6 @@ class DataValidator:
             if self.terminal_id > 9999:
                 validator = False
                 error_data.append('Terminal ID')
-            #if self.txn_amt > 2375:
-            #    validator = False
-            #    error_data.append('Transaction Amount')
             if 30 < self.txn_seconds > 15811197:
                 validator = False
                 error_data.append('Transaction Seconds')
