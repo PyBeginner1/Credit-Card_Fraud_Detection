@@ -2,7 +2,8 @@
 
 Deployed: http://fraud-creditcard-env.eba-jeymp2ib.us-east-1.elasticbeanstalk.com/
 
-## Machine learning for credit card fraud detection
+
+## Machine learning for credit card fraud detection:
 Credit card fraud detection (CCFD) is like looking for needles in a haystack. It requires finding, out of millions of daily transactions, which ones are fraudulent. Due to the ever-increasing amount of data, it is now almost impossible for a human specialist to detect meaningful patterns from transaction data. For this reason, the use of machine learning techniques is now widespread in the field of fraud detection, where information extraction from large datasets is required.
 
 Machine learning (ML) is a powerful tool for detecting credit card fraud because it can quickly and accurately analyze large amounts of data and identify patterns that may be difficult for humans to discern. Credit card fraud is a significant problem for banks, credit card companies, and their customers, and ML can help reduce the risk and minimize losses.
@@ -11,7 +12,8 @@ ML algorithms can be trained on large datasets of credit card transactions to le
 
 Moreover, ML can continually learn from new data and adapt to changing patterns of fraud, making it a useful tool for combating evolving types of credit card fraud.
 
-## Transaction data simulator
+
+## Transaction data simulator:
 
 This section presents a transaction data simulator of legitimate and fraudulent transactions. This simulator will be used throughout the rest of this book to motivate and assess the efficiency of different fraud detection techniques in a reproducible way.
 
@@ -21,7 +23,8 @@ This simple design is a choice. First, having simple rules to generate transacti
 
 The simulated datasets will highlight most of the issues that practitioners of fraud detection face using real-world data. In particular, they will include class imbalance (less than 1% of fraudulent transactions), a mix of numerical and categorical features (with categorical features involving a very large number of values), non-trivial relationships between features, and time-dependent fraud scenarios.
 
-## Design choices
+
+## Design choices:
 Transaction features
 Our focus will be on the most essential features of a transaction. In essence, a payment card transaction consists of any amount paid to a merchant by a customer at a certain time. The six main features that summarise a transaction therefore are:
 
@@ -35,7 +38,8 @@ These features will be referred to as TRANSACTION_ID, TX_DATETIME, CUSTOMER_ID, 
 
 The goal of the transaction data simulator will be to generate a table of transactions with these features
 
-## Transaction generation process
+
+## Transaction generation process:
 The simulation will consist of five main steps:
 
 1. Generation of customer profiles: Every customer is different in their spending habits. This will be simulated by defining some properties for each customer. The main properties will be their geographical location, their spending frequency, and their spending amounts. The customer properties will be represented as a table, referred to as the customer profile table.
@@ -45,7 +49,8 @@ The simulation will consist of five main steps:
 4. Generation of transactions: The simulator will loop over the set of customer profiles, and generate transactions according to their properties (spending frequencies and amounts, and available terminals). This will result in a table of transactions.
 5. Generation of fraud scenarios: This last step will label the transactions as legitimate or genuine. This will be done by following three different fraud scenarios.
 
-## Fraud scenarios generation
+
+## Fraud scenarios generation:
 This last step of the simulation adds fraudulent transactions to the dataset, using the following fraud scenarios:
 
 Scenario 1: Any transaction whose amount is more than 220 is a fraud. This scenario is not inspired by a real-world scenario. Rather, it will provide an obvious fraud pattern that should be detected by any baseline fraud detector. This will be useful to validate the implementation of a fraud detection technique.
@@ -54,5 +59,14 @@ Scenario 2: Every day, a list of two terminals is drawn at random. All transacti
 
 Scenario 3: Every day, a list of 3 customers is drawn at random. In the next 14 days, 1/3 of their transactions have their amounts multiplied by 5 and marked as fraudulent. This scenario simulates a card-not-present fraud where the credentials of a customer have been leaked. The customer continues to make transactions, and transactions of higher values are made by the fraudster who tries to maximize their gains. Detecting this scenario will require adding features that keep track of the spending habits of the customer. As for scenario 2, since the card is only temporarily compromised, additional strategies that involve concept drift should also be designed.
 
-## Supervised learning
+
+## Supervised learning:
 ![Alt text](https://fraud-detection-handbook.github.io/fraud-detection-handbook/_images/baseline_ML_workflow.png)
+
+
+## Challenges:
+- Class imbalance: Real-world transaction data is mostly composed of legitimate transactions, with fraudulent transactions accounting for less than 1% of the total. Working with imbalanced data can pose a challenge for machine learning algorithms, which may struggle to handle large differences between classes. Therefore, we use the Strattified Shuffle split technique, which helps balance the distribution and address this issue.
+
+- Data Drift: Patterns of transactions and fraud can evolve over time, with changes occurring in both the spending habits of credit card users and the techniques used by fraudsters. Credit card users' spending habits may vary depending on factors such as weekdays, weekends, vacations, and changes in their overall behavior over time. Meanwhile, fraudsters may adapt their tactics as older ones become ineffective.
+
+- Lack of datasets to train: Due to confidentiality concerns, real-world credit card transaction data cannot be made public.
