@@ -162,5 +162,4 @@ demo.py
 artifact/
 
 notebook/trial.ipynb
-saved_models/
 notebook/ignore.ipynb
