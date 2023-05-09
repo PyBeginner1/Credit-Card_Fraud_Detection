@@ -63,7 +63,7 @@
     </head>
     <body>
         <h1>Credit Card Fraud Detection</h1>
-        <h2>Please enter the following values:</h2>
+        <h2>Please enter the following values to check if its a Fraudulent or Legitimate transaction:</h2>
         <form action="{{ url_for('predict') }}" method="post">
             <label for="day">Transaction Day:</label>
             <input type="number" id="day" name="day" step="1">
