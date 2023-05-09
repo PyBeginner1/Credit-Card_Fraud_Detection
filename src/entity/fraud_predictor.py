@@ -72,6 +72,14 @@ class DataValidator:
             if self.txn_day > 31:
                 validator = False
                 error_data.append('Transaction day')
+            if self.txn_month in [4,6,9,11]:
+                if self.txn_day > 30:
+                    validator = False
+                    error_data.append('Transaction day')
+            elif self.txn_month == 2:
+                if self.txn_day > 28:
+                    validator = False
+                    error_data.append('Transaction day')
             if self.txn_month > 12:
                 validator = False
                 error_data.append('Transaction Month')
