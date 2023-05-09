@@ -55,4 +55,4 @@ Scenario 2: Every day, a list of two terminals is drawn at random. All transacti
 Scenario 3: Every day, a list of 3 customers is drawn at random. In the next 14 days, 1/3 of their transactions have their amounts multiplied by 5 and marked as fraudulent. This scenario simulates a card-not-present fraud where the credentials of a customer have been leaked. The customer continues to make transactions, and transactions of higher values are made by the fraudster who tries to maximize their gains. Detecting this scenario will require adding features that keep track of the spending habits of the customer. As for scenario 2, since the card is only temporarily compromised, additional strategies that involve concept drift should also be designed.
 
 ## Supervised learning
-![alt text] (https://fraud-detection-handbook.github.io/fraud-detection-handbook/_images/baseline_ML_workflow.png)
+![Alt text](https://fraud-detection-handbook.github.io/fraud-detection-handbook/_images/baseline_ML_workflow.png)
