@@ -2,6 +2,15 @@
 
 Deployed: http://fraud-creditcard-env.eba-jeymp2ib.us-east-1.elasticbeanstalk.com/
 
+## Machine learning for credit card fraud detection
+Credit card fraud detection (CCFD) is like looking for needles in a haystack. It requires finding, out of millions of daily transactions, which ones are fraudulent. Due to the ever-increasing amount of data, it is now almost impossible for a human specialist to detect meaningful patterns from transaction data. For this reason, the use of machine learning techniques is now widespread in the field of fraud detection, where information extraction from large datasets is required.
+
+Machine learning (ML) is a powerful tool for detecting credit card fraud because it can quickly and accurately analyze large amounts of data and identify patterns that may be difficult for humans to discern. Credit card fraud is a significant problem for banks, credit card companies, and their customers, and ML can help reduce the risk and minimize losses.
+
+ML algorithms can be trained on large datasets of credit card transactions to learn patterns and anomalies that are indicative of fraud. These patterns may include unusual purchasing behavior, unusual geographical locations, unusual transaction amounts, and more. By analyzing these patterns, ML algorithms can identify potentially fraudulent transactions and alert financial institutions to investigate further.
+
+Moreover, ML can continually learn from new data and adapt to changing patterns of fraud, making it a useful tool for combating evolving types of credit card fraud.
+
 ## Transaction data simulator
 
 This section presents a transaction data simulator of legitimate and fraudulent transactions. This simulator will be used throughout the rest of this book to motivate and assess the efficiency of different fraud detection techniques in a reproducible way.
