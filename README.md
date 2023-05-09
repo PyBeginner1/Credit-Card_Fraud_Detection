@@ -1,5 +1,7 @@
 # Credit Card Fraud Detection
 
+Deployed: http://fraud-creditcard-env.eba-jeymp2ib.us-east-1.elasticbeanstalk.com/
+
 ## Transaction data simulator
 
 This section presents a transaction data simulator of legitimate and fraudulent transactions. This simulator will be used throughout the rest of this book to motivate and assess the efficiency of different fraud detection techniques in a reproducible way.
