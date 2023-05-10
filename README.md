@@ -106,6 +106,18 @@ Scenario 3: Every day, a list of 3 customers is drawn at random. In the next 14 
 
 - Lack of datasets to train: Due to confidentiality concerns, real-world credit card transaction data cannot be made public.
 
+
+## Decision Tree Algorithm Overview:
+The decision tree is the simplest and most popular classification algorithm. For building the model the decision tree algorithm considers all the provided features of the data and comes up with the important features.
+
+Because of this advantage, the decision tree algorithms also used in identifying the importance of the feature metrics. Which used in handpicking the features. 
+
+Once the important features identified then the model trains with the training data to come up with a set of rules. These rules used in predicting future cases or for the test dataset. 
+
+## Architecture:
+![alt text](https://static.javatpoint.com/tutorial/machine-learning/images/decision-tree-classification-algorithm.png)
+
+
 ## References:
 - https://www.hindustantimes.com/cities/mumbai-news/thane-municipal-corporation-receives-over-90-complaints-about-water-pipeline-leakages-and-damages-since-january-101683660851807.html
 - https://en.wikipedia.org/wiki/Credit_card_fraud
