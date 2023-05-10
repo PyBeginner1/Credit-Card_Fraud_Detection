@@ -35,6 +35,7 @@ Examples:
 - Mail orders: Payments sent by post; for example, when ordering from a physical product catalog.
 
 ![Alt text](https://www.insiderintelligence.com/content/storage/29c443c7620df8d6118b5ca811fd112e/277849)
+
 Based on data from the US, card-not-present (CNP) fraud is expected to cause a loss of $9.49 billion this year, indicating an 8.5% increase over last year's figures. CNP fraud will account for 73.0% of all card payment fraud losses in 2021, which is a substantial increase from 57.0% in 2019.
 
 ## Machine learning for credit card fraud detection:
