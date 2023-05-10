@@ -1,6 +1,14 @@
 # Credit Card Fraud Detection
 
-Deployed: http://fraud-creditcard-env.eba-jeymp2ib.us-east-1.elasticbeanstalk.com/
+Deployment: http://fraud-creditcard-env.eba-jeymp2ib.us-east-1.elasticbeanstalk.com/
+
+
+## Credit Card Fraud:
+According to data from the Reserve Bank of India (RBI), over a period of 10 years between April 2009 and September 2019, fraudsters managed to extract ₹615.39 crore from more than 1.17 lakh cases of credit and debit card frauds. However, the actual amount could be much higher since the bank did not keep records of cybercrimes under ₹1 lakh between April 2009 and April 2017.
+
+In a survey conducted by online marketplace OLX in February 2020, it was revealed that 52% of the 7,500 respondents publicly shared their phone numbers and personal addresses online, with 26% of them also sharing one-time passwords (OTP) with others, and 22% admitting to sharing bank account, UPI, credit or debit card PIN details.
+
+The RBI data showed that between April 2009 and April 2017, 100-odd banks reported 6,785 cases of credit/debit card fraud, resulting in a loss of ₹243.95 crore. However, after the RBI started tracking frauds under ₹1 lakh from April 2017, there was a significant increase in the number of reported cases. Within just two-and-a-half years (between April 2017 and September 2019), a total of 1,10,367 cases amounting to ₹371.44 crore were reported.
 
 
 ## Machine learning for credit card fraud detection:
