@@ -11,6 +11,14 @@ In a survey conducted by online marketplace OLX in February 2020, it was reveale
 The RBI data showed that between April 2009 and April 2017, 100-odd banks reported 6,785 cases of credit/debit card fraud, resulting in a loss of ₹243.95 crore. However, after the RBI started tracking frauds under ₹1 lakh from April 2017, there was a significant increase in the number of reported cases. Within just two-and-a-half years (between April 2017 and September 2019), a total of 1,10,367 cases amounting to ₹371.44 crore were reported.
 
 
+## Means of payment card fraud:
+There are two types of card fraud, namely card-present fraud (less common these days) and card-not-present fraud (more common). The compromise can occur in various ways and often takes place without the cardholder's knowledge. The internet has made database security lapses particularly costly, and in some cases, millions of accounts have been compromised.
+
+In situations where a card is stolen, the cardholder can quickly report it to the issuing bank, but if the account details have been compromised, fraudsters may hold onto them for months before any theft occurs, making it challenging to identify the source of the breach. The cardholder may only become aware of fraudulent activity after receiving a statement. To mitigate this risk, cardholders should frequently check their accounts to ensure there are no suspicious or unknown transactions.
+
+When a credit card is lost or stolen, it can be used for illicit purchases until the holder informs the issuing bank, and the bank places a block on the account. Most banks offer free 24-hour telephone numbers to encourage prompt reporting. However, it is still possible for a thief to make unauthorized purchases on a card before it is cancelled.
+
+
 ## Machine learning for credit card fraud detection:
 Credit card fraud detection (CCFD) is like looking for needles in a haystack. It requires finding, out of millions of daily transactions, which ones are fraudulent. Due to the ever-increasing amount of data, it is now almost impossible for a human specialist to detect meaningful patterns from transaction data. For this reason, the use of machine learning techniques is now widespread in the field of fraud detection, where information extraction from large datasets is required.
 
