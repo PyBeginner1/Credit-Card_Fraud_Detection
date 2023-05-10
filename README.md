@@ -18,6 +18,22 @@ In situations where a card is stolen, the cardholder can quickly report it to th
 
 When a credit card is lost or stolen, it can be used for illicit purchases until the holder informs the issuing bank, and the bank places a block on the account. Most banks offer free 24-hour telephone numbers to encourage prompt reporting. However, it is still possible for a thief to make unauthorized purchases on a card before it is cancelled.
 
+## Card-Present Fraud:
+Card-present fraud is a transaction in which the fraudulent party physically presents the counterfeit credit card to the merchant. A simple example of card-present fraud would be when a thief steals a credit card and then simply uses that card in-person at a store to make a purchase. Sometimes these incidents can be detected by the store staff; one example is when the buyer seems unusually eager to process the transaction quickly. Other tactics sometimes used by card-present fraudulent parties include trying to distract the merchant to prevent them from scrutinizing the card, or showing up very close to the opening or closing times of the store when there may be less staff present to handle anti-fraud procedures. 
+
+Card-present fraud has become less common because credit card thieves have shifted their attention to online forms of credit card fraud. Online credit card theft allows hackers to access potentially far larger pools of credit card information without needing to expose themselves to the risk of in-person detection at a store. Moreover, with large merchants holding vast databases of credit card information, online cybercrime allows hackers to potentially access hundreds of thousands or even millions of credit cards at once.
+
+## Card not present Fraud:
+A card-not-present transaction (CNP, mail order / telephone order, MO/TO) is a payment card transaction made where the cardholder does not or cannot physically present the card for a merchant's visual examination at the time that an order is given and payment effected. It is most commonly used for payments made over the Internet, but can also be used with mail-order transactions by mail or fax, or over the telephone.
+
+Card-not-present transactions are a major route for credit card fraud, because it is difficult for a merchant to verify that the actual cardholder is indeed authorizing a purchase.
+
+Examples: 
+- Online orders: A customer adds products to an online shopping cart and checks out using their card details.
+- Buy online, pickup in-store (BOPIS): Similar to online orders, but the customer picks up their order instead of having it delivered.
+- Phone orders: A customer makes an order over the phone, calling out their credit card details to the sales agent who then processes the payment.
+- Mail orders: Payments sent by post; for example, when ordering from a physical product catalog.
+
 
 ## Machine learning for credit card fraud detection:
 Credit card fraud detection (CCFD) is like looking for needles in a haystack. It requires finding, out of millions of daily transactions, which ones are fraudulent. Due to the ever-increasing amount of data, it is now almost impossible for a human specialist to detect meaningful patterns from transaction data. For this reason, the use of machine learning techniques is now widespread in the field of fraud detection, where information extraction from large datasets is required.
@@ -86,3 +102,8 @@ Scenario 3: Every day, a list of 3 customers is drawn at random. In the next 14 
 - Data Drift: Patterns of transactions and fraud can evolve over time, with changes occurring in both the spending habits of credit card users and the techniques used by fraudsters. Credit card users' spending habits may vary depending on factors such as weekdays, weekends, vacations, and changes in their overall behavior over time. Meanwhile, fraudsters may adapt their tactics as older ones become ineffective.
 
 - Lack of datasets to train: Due to confidentiality concerns, real-world credit card transaction data cannot be made public.
+
+## References:
+https://www.hindustantimes.com/cities/mumbai-news/thane-municipal-corporation-receives-over-90-complaints-about-water-pipeline-leakages-and-damages-since-january-101683660851807.html
+https://en.wikipedia.org/wiki/Credit_card_fraud
+https://www.investopedia.com/terms/c/cardpresent-fraud.asp#:~:text=What%20Is%20Card%2DPresent%20Fraud,card%20is%20not%20physically%20present.
