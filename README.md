@@ -34,6 +34,8 @@ Examples:
 - Phone orders: A customer makes an order over the phone, calling out their credit card details to the sales agent who then processes the payment.
 - Mail orders: Payments sent by post; for example, when ordering from a physical product catalog.
 
+![Alt text](https://www.insiderintelligence.com/content/storage/29c443c7620df8d6118b5ca811fd112e/277849)
+Based on data from the US, card-not-present (CNP) fraud is expected to cause a loss of $9.49 billion this year, indicating an 8.5% increase over last year's figures. CNP fraud will account for 73.0% of all card payment fraud losses in 2021, which is a substantial increase from 57.0% in 2019.
 
 ## Machine learning for credit card fraud detection:
 Credit card fraud detection (CCFD) is like looking for needles in a haystack. It requires finding, out of millions of daily transactions, which ones are fraudulent. Due to the ever-increasing amount of data, it is now almost impossible for a human specialist to detect meaningful patterns from transaction data. For this reason, the use of machine learning techniques is now widespread in the field of fraud detection, where information extraction from large datasets is required.
@@ -104,6 +106,7 @@ Scenario 3: Every day, a list of 3 customers is drawn at random. In the next 14 
 - Lack of datasets to train: Due to confidentiality concerns, real-world credit card transaction data cannot be made public.
 
 ## References:
-https://www.hindustantimes.com/cities/mumbai-news/thane-municipal-corporation-receives-over-90-complaints-about-water-pipeline-leakages-and-damages-since-january-101683660851807.html
-https://en.wikipedia.org/wiki/Credit_card_fraud
-https://www.investopedia.com/terms/c/cardpresent-fraud.asp#:~:text=What%20Is%20Card%2DPresent%20Fraud,card%20is%20not%20physically%20present.
+- https://www.hindustantimes.com/cities/mumbai-news/thane-municipal-corporation-receives-over-90-complaints-about-water-pipeline-leakages-and-damages-since-january-101683660851807.html
+- https://en.wikipedia.org/wiki/Credit_card_fraud
+- https://www.investopedia.com/terms/c/cardpresent-fraud.asp#:~:text=What%20Is%20Card%2DPresent%20Fraud,card%20is%20not%20physically%20present.
+- https://www.insiderintelligence.com/content/card-not-present-fraud-payment
