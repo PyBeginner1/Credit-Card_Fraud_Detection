@@ -1,6 +1,6 @@
 # Credit Card Fraud Detection
 
-Deployment: http://fraud-creditcard-env.eba-jeymp2ib.us-east-1.elasticbeanstalk.com/
+Application url: [Credit Card Fraud Detection](http://fraud-creditcard-env.eba-jeymp2ib.us-east-1.elasticbeanstalk.com/)
 
 
 ## Credit Card Fraud:
